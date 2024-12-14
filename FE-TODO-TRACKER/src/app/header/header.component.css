@@ -1,0 +1,91 @@
+.container {
+  background: transparent;
+  position: absolute;
+  background: #128872;
+  background: rgba(0,0,0,0);
+  font-size: 20px;
+  height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  color: #0b0202;
+  width: 100%;
+  padding: 20px;
+}
+
+#sidenav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  max-width: 100%; /* Ensure the container does not exceed the viewport width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Make sure each menu item takes full width */
+  padding: 10px 0;
+}
+
+.menu-item mat-icon {
+  margin-right: 10px;
+  cursor: pointer; /* Ensure the cursor is a pointer */
+}
+
+.menu-item h4 {
+  margin: 0;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+#user {
+  font-size: 50px;
+  margin-left: 45px;
+}
+
+#todo {
+  width: 30%;
+  height: 40px;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+body {
+  background-color: transparent;
+  background: transparent;
+}
+
+#sidenav div {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#sidenav h4 {
+  font-family: "Protest Riot", sans-serif;
+  transition: -0.2s;
+}
+
+/* Hover effect for the more_vert icon */
+mat-icon[aria-label="Example icon-button with a menu"]:hover {
+  color: #0b0202; /* Change color on hover, adjust as needed */
+  cursor: pointer; /* Ensure the cursor is a pointer on hover */
+}
+
+/* Cursor pointer for login, home, about icons */
+.menu-item mat-icon {
+  cursor: pointer; /* Ensure the cursor is a pointer */
+}
+
+/* Optional: Add a hover effect for the menu items for better user experience */
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Light background change on hover, adjust as needed */
+  transition: background-color 0.2s ease-in-out; /* Smooth transition */
+}

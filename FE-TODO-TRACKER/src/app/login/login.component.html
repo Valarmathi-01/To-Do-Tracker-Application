@@ -1,0 +1,40 @@
+<div id="background">
+    <div class="container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="screen__content">
+          <h2>LOGIN</h2>
+          <div class="login__field">
+            <i class="login__icon fa fa-envelope"></i>
+            <input type="text" class="login__input" formControlName="email" placeholder="Email" required>
+            <div *ngIf="formSubmitted && loginForm.get('email')?.invalid">
+              <div class="text-danger" *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</div>
+              <div class="text-danger" *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</div>
+              <div class="text-danger" *ngIf="loginForm.get('email')?.errors?.['gmailDomain']"></div>
+            </div>
+          </div>
+          <div class="login__field">
+            <i class="login__icon fa fa-lock"></i>
+            <input type="password" class="login__input" formControlName="password" placeholder="Password" required>
+            <div *ngIf="formSubmitted && loginForm.get('password')?.invalid">
+              <div class="text-danger" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</div>
+              <div class="text-danger" *ngIf="loginForm.get('password')?.errors?.['passwordStrength']">
+                Password must be 6 characters and one special character
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="button login__submit">
+            <span class="button__text">Login</span>
+            <i class="button__icon fa fa-chevron-right"></i>
+          </button>
+          <a class="signup" routerLink="/signin">Need an account? Signup</a>
+        </div>
+      </form>
+      <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+      </div>
+    </div>
+  </div>
+  

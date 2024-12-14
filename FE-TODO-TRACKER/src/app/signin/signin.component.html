@@ -1,0 +1,47 @@
+<div id="background">
+    <div class="container">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="screen__content">
+          <h2>SIGNUP</h2>
+          <div class="login__field">
+            <i class="login__icon fa fa-user"></i>
+            <input type="text" class="login__input" formControlName="name" placeholder="Enter your name" required>
+            <div *ngIf="formSubmitted && signupForm.get('name')?.invalid">
+              <div class="text-danger" *ngIf="signupForm.get('name')?.errors?.['required']">Name is required</div>
+              <div class="text-danger" *ngIf="signupForm.get('name')?.errors?.['invalidName']">Name should contain only alphabetic letters</div>
+            </div>
+          </div>
+          <div class="login__field">
+            <i class="login__icon fa fa-envelope"></i>
+            <input type="email" class="login__input" formControlName="email" placeholder="Enter your email" required>
+            <div *ngIf="formSubmitted && signupForm.get('email')?.invalid">
+              <div class="text-danger" *ngIf="signupForm.get('email')?.errors?.['required']">Email is required</div>
+              <div class="text-danger" *ngIf="signupForm.get('email')?.errors?.['email']">Please enter a valid email</div>
+            </div>
+          </div>
+          <div class="login__field">
+            <i class="login__icon fa fa-lock"></i>
+            <input type="password" class="login__input" formControlName="password" placeholder="Create a password" required>
+            <div *ngIf="formSubmitted && signupForm.get('password')?.invalid">
+              <div class="text-danger" *ngIf="signupForm.get('password')?.errors?.['required']">Password is required</div>
+              <div class="text-danger" *ngIf="signupForm.get('password')?.errors?.['passwordStrength']">
+                Password must be 6 characters and one special character
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="button login__submit">
+            <span class="button__text">Signup</span>
+            <i class="button__icon fa fa-chevron-right"></i>
+          </button>
+          <a class="link" routerLink="/login">Already have an account? Login</a>
+        </div>
+      </form>
+      <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+      </div>
+    </div>
+  </div>
+  
